@@ -1,0 +1,40 @@
+.App {
+  text-align: center;
+}
+
+.Header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.keyStyle {
+  margin-top: 8px;
+  padding-left: 4px;
+  padding-right: 4px;
+  border: 1px solid white;
+  border-radius: 5px;
+  margin-right: 6px;
+  font-size: x-large;
+}
+
+.keyStyle:hover {
+  color: black;
+  border: 1px solid black;
+}
+
+.inputBox {
+  margin-top: 20px;
+  width: 150px;
+  height: 24px;
+  border: 1px solid white;
+  border-radius: 5px;
+  font-size: xx-large;
+  background-color: lightblue;
+  padding: 8px;
+}
