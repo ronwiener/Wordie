@@ -5,7 +5,17 @@ class Header extends React.Component {
     return (
       <div>
         <div style={{ fontSize: "2.5em", color: "white" }}>
-          🅆 🄾 <span style={{ color: "lightgreen" }}>🅁</span> 🄳 🄸 🄴
+          🅆 🄾{" "}
+          <span
+            style={{
+              fontSize: "80px",
+              backgroundColor: "#282c34",
+              color: "lightgreen",
+            }}
+          >
+            🅁
+          </span>{" "}
+          🄳 🄸 🄴
           <br />
           <div>
             <p style={{ fontSize: "0.22em", color: "white" }}>
