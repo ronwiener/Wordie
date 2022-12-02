@@ -235,7 +235,7 @@ class App extends React.Component {
             } else {
               if (this.foundAll(wordSubmitted, wordSubmitted[i], i)) {
                 tileColor = "white";
-              } else tileColor = "blue";
+              } else tileColor = "lightblue";
             }
           }
           newRow[i] = {
