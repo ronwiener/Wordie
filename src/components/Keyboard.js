@@ -1,4 +1,6 @@
 import React from "react";
+import IconButton from "@mui/material/IconButton";
+import RestartAltIcon from "@mui/icons-material/RestartAlt";
 import "../App.css";
 
 class Keyboard extends React.Component {
@@ -74,6 +76,12 @@ class Keyboard extends React.Component {
               {letter}
             </div>
           ))}
+          <IconButton style={{ float: "left" }}>
+            <RestartAltIcon
+              sx={{ fontSize: "40px", color: "green" }}
+              onClick={this.props.resetGame}
+            />
+          </IconButton>
         </div>
       </div>
     );

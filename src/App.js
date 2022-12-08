@@ -77,6 +77,71 @@ class App extends React.Component {
     };
   }
 
+  resetGame = () => {
+    this.downloadDictionary();
+    this.getScores();
+    this.setState({
+      words: [],
+      board: [
+        [
+          { letter: "", status: "white" },
+          { letter: "", status: "white" },
+          { letter: "", status: "white" },
+          { letter: "", status: "white" },
+          { letter: "", status: "white" },
+        ],
+        [
+          { letter: "", status: "white" },
+          { letter: "", status: "white" },
+          { letter: "", status: "white" },
+          { letter: "", status: "white" },
+          { letter: "", status: "white" },
+        ],
+        [
+          { letter: "", status: "white" },
+          { letter: "", status: "white" },
+          { letter: "", status: "white" },
+          { letter: "", status: "white" },
+          { letter: "", status: "white" },
+        ],
+        [
+          { letter: "", status: "white" },
+          { letter: "", status: "white" },
+          { letter: "", status: "white" },
+          { letter: "", status: "white" },
+          { letter: "", status: "white" },
+        ],
+        [
+          { letter: "", status: "white" },
+          { letter: "", status: "white" },
+          { letter: "", status: "white" },
+          { letter: "", status: "white" },
+          { letter: "", status: "white" },
+        ],
+        [
+          { letter: "", status: "white" },
+          { letter: "", status: "white" },
+          { letter: "", status: "white" },
+          { letter: "", status: "white" },
+          { letter: "", status: "white" },
+        ],
+      ],
+      correctList: [],
+      foundList: [],
+      usedList: [],
+      currentRow: 0,
+      currentWord: "",
+      currentGuess: "",
+      errorMessage: "Can you guess the word?",
+      gameOver: false,
+      score: 0,
+      gamesPlayed: 0,
+      gamesWon: 0,
+      currentStreak: 0,
+      longestStreak: 0,
+    });
+  };
+
   getScores = () => {
     if (localStorage.getItem("score")) {
       //setting the score into memory
@@ -141,6 +206,7 @@ class App extends React.Component {
   componentDidMount = () => {
     this.downloadDictionary();
     this.getScores();
+    this.resetGame();
   };
 
   async downloadDictionary() {
@@ -227,9 +293,13 @@ class App extends React.Component {
         let newRow = [];
         for (let i = 0; i < wordSubmitted.length; i++) {
           usedList.push(wordSubmitted[i]);
+
           if (currentWord.includes(wordSubmitted[i])) {
             foundList.push(wordSubmitted[i]);
+
+            //if the letter is in the correct space this will light green and put the letter in the correctList
             if (currentWord[i] === wordSubmitted[i]) {
+              console.log(currentWord[i], wordSubmitted[i]);
               tileColor = "lightgreen";
               correctList.push(wordSubmitted[i]);
             } else {
@@ -403,7 +473,9 @@ class App extends React.Component {
             usedList={this.state.usedList}
             foundList={this.state.foundList}
             correctList={this.state.correctList}
+            resetGame={this.resetGame}
           />
+
           <Score
             score={this.state.score}
             gamesWon={this.state.gamesWon}
