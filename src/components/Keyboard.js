@@ -9,7 +9,8 @@ class Keyboard extends React.Component {
     this.state = {
       topRow: ["Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P"],
       middleRow: ["A", "S", "D", "F", "G", "H", "J", "K", "L"],
-      bottomRow: ["Z", "X", "C", "V", "B", "N", "M", "←", "Enter"],
+      bottomRow: ["Z", "X", "C", "V", "B", "N", "M", "←"],
+      actionRow: ["Enter"],
     };
   }
 
@@ -76,12 +77,32 @@ class Keyboard extends React.Component {
               {letter}
             </div>
           ))}
-          <IconButton style={{ float: "left" }}>
-            <RestartAltIcon
-              sx={{ fontSize: "40px", color: "green" }}
-              onClick={this.props.resetGame}
-            />
-          </IconButton>
+        </div>
+        <div
+          style={{
+            display: "flex",
+            flexWrap: "wrap",
+            justifyContent: "center",
+            width: "100%",
+          }}
+        >
+          {this.state.actionRow.map((letter, idx) => (
+            <div
+              className="actionKeyStyle"
+              key={letter}
+              onClick={this.handleClick}
+            >
+              {letter}
+            </div>
+          ))}
+          <div>
+            <IconButton style={{ float: "left" }}>
+              <RestartAltIcon
+                sx={{ fontSize: "38px", color: "#43D312" }}
+                onClick={this.props.resetGame}
+              />
+            </IconButton>
+          </div>
         </div>
       </div>
     );

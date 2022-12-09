@@ -26,14 +26,22 @@ class Score extends React.Component {
             float: "left",
           }}
         >
-          Score: {this.props.score} Played: {this.props.gamesPlayed} Won:{" "}
-          {this.props.gamesWon} -- {percentWon}% <br />
-          Current Streak: {this.props.currentStreak} Longest Streak:{" "}
+          Score: <font style={{ color: "#C78FEF" }}>{this.props.score}</font>{" "}
+          Played:{" "}
+          <font style={{ color: "#C78FEF" }}>{this.props.gamesPlayed}</font>{" "}
+          Won:{" "}
+          <font style={{ color: "#C78FEF" }}>{this.props.gamesWon} -- </font>
+          {percentWon}% <br />
+          Current Win Streak:{" "}
+          <font style={{ color: "orange" }}>
+            {this.props.currentStreak}
+          </font>{" "}
+          Longest Streak:{" "}
           <font style={{ color: "orange" }}>{this.props.longestStreak}</font>
         </div>
 
         <IconButton style={{ float: "left" }} onClick={this.props.clearScores}>
-          <DeleteSweepOutlinedIcon sx={{ fontSize: "45px", color: "red" }} />
+          <DeleteSweepOutlinedIcon sx={{ fontSize: "40px", color: "red" }} />
           {/* alt= "Delete Scores?" title="Delete Scores" style={{display:"inline-block",verticalAlign:"middle",width:"48px",height:"48px",paddingBottom:"8px"}} onClick={this.props.clearScores} /> */}
         </IconButton>
       </div>

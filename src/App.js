@@ -134,11 +134,6 @@ class App extends React.Component {
       currentGuess: "",
       errorMessage: "Can you guess the word?",
       gameOver: false,
-      score: 0,
-      gamesPlayed: 0,
-      gamesWon: 0,
-      currentStreak: 0,
-      longestStreak: 0,
     });
   };
 
