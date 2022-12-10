@@ -1,6 +1,7 @@
 import React from "react";
 import IconButton from "@mui/material/IconButton";
 import DeleteSweepOutlinedIcon from "@mui/icons-material/DeleteSweepOutlined";
+import RestartAltIcon from "@mui/icons-material/RestartAlt";
 import "../App.css";
 
 class Score extends React.Component {
@@ -43,6 +44,12 @@ class Score extends React.Component {
         <IconButton style={{ float: "left" }} onClick={this.props.clearScores}>
           <DeleteSweepOutlinedIcon sx={{ fontSize: "40px", color: "red" }} />
           {/* alt= "Delete Scores?" title="Delete Scores" style={{display:"inline-block",verticalAlign:"middle",width:"48px",height:"48px",paddingBottom:"8px"}} onClick={this.props.clearScores} /> */}
+        </IconButton>
+        <IconButton style={{ float: "right" }}>
+          <RestartAltIcon
+            sx={{ fontSize: "40px", color: "#43D312" }}
+            onClick={this.props.resetGame}
+          />
         </IconButton>
       </div>
     );

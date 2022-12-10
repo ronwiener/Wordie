@@ -468,7 +468,6 @@ class App extends React.Component {
             usedList={this.state.usedList}
             foundList={this.state.foundList}
             correctList={this.state.correctList}
-            resetGame={this.resetGame}
           />
 
           <Score
@@ -478,6 +477,7 @@ class App extends React.Component {
             clearScores={this.clearScores}
             currentStreak={this.state.currentStreak}
             longestStreak={this.state.longestStreak}
+            resetGame={this.resetGame}
           />
         </header>
       </div>
