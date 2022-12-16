@@ -39,3 +39,11 @@
   background-color: lightblue;
   padding: 8px;
 }
+
+.buttons {
+  display: flex;
+}
+
+.buttons:hover {
+  color: blue;
+}

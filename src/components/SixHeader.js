@@ -1,6 +1,6 @@
 import React from "react";
 
-class Header extends React.Component {
+class Header1 extends React.Component {
   render() {
     return (
       <div>
@@ -17,7 +17,12 @@ class Header extends React.Component {
           </span>{" "}
           🄳 🄸 🄴
           <div>
-            <p style={{ fontSize: "0.22em", color: "white" }}>
+            <p
+              style={{
+                fontSize: "0.22em",
+                color: "white",
+              }}
+            >
               By Ron's Fun & Games
             </p>
           </div>
@@ -27,4 +32,4 @@ class Header extends React.Component {
     );
   }
 }
-export default Header;
+export default Header1;
