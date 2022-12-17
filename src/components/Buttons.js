@@ -13,15 +13,20 @@ class Buttons extends React.Component {
       <div className="buttons">
         <Link to="appsix" style={{ textDecoration: "none" }}>
           <Filter6Icon
-            style={{ fontSize: "30px", color: "white", marginTop: "12px" }}
+            style={{
+              paddingRight: "40px",
+              fontSize: "30px",
+              color: "white",
+              marginTop: "12px",
+            }}
           />
           <Typography
             style={{
               lineHeight: "0.75em",
               fontSize: "20px",
               color: "white",
-              paddingLeft: "6px",
-              marginBottom: "5px",
+              paddingRight: "30px",
+              marginBottom: "15px",
             }}
           >
             letter game
@@ -31,7 +36,7 @@ class Buttons extends React.Component {
         <IconButton onClick={this.props.resetGame}>
           <RestartAltIcon
             style={{
-              paddingLeft: "45px",
+              paddingLeft: "120px",
               fontSize: "40px",
               color: "#43D312",
             }}

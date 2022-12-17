@@ -170,14 +170,17 @@ class AppFive extends React.Component {
     const counts = {};
 
     for (const num of wordArray) {
+      console.log(counts);
       counts[num] = counts[num] ? counts[num] + 1 : 1;
     }
+
     //count the occurrences of each letter in the target word
     let actualWordArray = this.state.currentWord.split("");
     let countsActual = {};
     for (const num of actualWordArray) {
       countsActual[num] = countsActual[num] ? countsActual[num] + 1 : 1;
     }
+    console.log(countsActual);
     //check if the currentLetter is in the right spot, and if there are still more to find
     let foundCounter = 0;
     let foundIt = false;
@@ -222,7 +225,6 @@ class AppFive extends React.Component {
 
             //if the letter is in the correct space this will light green and put the letter in the correctList
             if (currentWord[i] === wordSubmitted[i]) {
-              console.log(currentWord[i], wordSubmitted[i]);
               tileColor = "lightgreen";
               correctList.push(wordSubmitted[i]);
             } else {
