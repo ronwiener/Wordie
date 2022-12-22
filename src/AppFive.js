@@ -164,13 +164,12 @@ class AppFive extends React.Component {
     }
   };
 
-  foundAll = (wordSubmitted, letterToCheck, letterIndex) => {
+  foundAll = (wordSubmitted, letterToCheck) => {
     //count the occurrences of each letter in the word submitted
     let wordArray = wordSubmitted.split("");
     const counts = {};
 
     for (const num of wordArray) {
-      console.log(counts);
       counts[num] = counts[num] ? counts[num] + 1 : 1;
     }
 
@@ -180,7 +179,7 @@ class AppFive extends React.Component {
     for (const num of actualWordArray) {
       countsActual[num] = countsActual[num] ? countsActual[num] + 1 : 1;
     }
-    console.log(countsActual);
+
     //check if the currentLetter is in the right spot, and if there are still more to find
     let foundCounter = 0;
     let foundIt = false;
@@ -189,6 +188,7 @@ class AppFive extends React.Component {
         wordSubmitted[i] === this.state.currentWord[i] &&
         wordSubmitted[i] === letterToCheck
       ) {
+        console.log(wordSubmitted[i], letterToCheck);
         foundIt = true;
         foundCounter++;
       }
@@ -196,6 +196,7 @@ class AppFive extends React.Component {
         if (countsActual[letterToCheck] <= foundCounter) {
           return true;
         }
+        console.log(countsActual[letterToCheck]);
       }
       foundIt = false;
     }
