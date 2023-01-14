@@ -164,7 +164,7 @@ class AppFive extends React.Component {
     }
   };
 
-  foundAll = (wordSubmitted, letterToCheck) => {
+  foundAll = (wordSubmitted, letterToCheck, i) => {
     //count the occurrences of each letter in the word submitted
     let wordArray = wordSubmitted.split("");
     const counts = {};
@@ -188,15 +188,19 @@ class AppFive extends React.Component {
         wordSubmitted[i] === this.state.currentWord[i] &&
         wordSubmitted[i] === letterToCheck
       ) {
-        console.log(wordSubmitted[i], letterToCheck);
         foundIt = true;
         foundCounter++;
       }
+      console.log(wordSubmitted[i] === letterToCheck);
+      /* console.log(foundIt, foundCounter);
+      console.log(foundIt, foundCounter);
+      console.log(wordSubmitted[i]);
+      console.log(letterToCheck);  */
       if (foundIt) {
+        // console.log(countsActual[letterToCheck]);
         if (countsActual[letterToCheck] <= foundCounter) {
           return true;
         }
-        console.log(countsActual[letterToCheck]);
       }
       foundIt = false;
     }
@@ -223,15 +227,19 @@ class AppFive extends React.Component {
 
           if (currentWord.includes(wordSubmitted[i])) {
             foundList.push(wordSubmitted[i]);
-
+            console.log(usedList);
+            console.log(foundList);
             //if the letter is in the correct space this will light green and put the letter in the correctList
             if (currentWord[i] === wordSubmitted[i]) {
               tileColor = "lightgreen";
               correctList.push(wordSubmitted[i]);
+              console.log(correctList);
             } else {
               if (this.foundAll(wordSubmitted, wordSubmitted[i], i)) {
                 tileColor = "white";
               } else tileColor = "lightblue";
+              console.log(wordSubmitted);
+              console.log(wordSubmitted[i]);
             }
           }
           newRow[i] = {
