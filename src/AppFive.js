@@ -137,7 +137,7 @@ class AppFive extends React.Component {
   };
 
   async downloadDictionary() {
-    let res = await fetch("5letterWords.txt");
+    let res = await fetch("fiveLetterWords.txt");
     if (res.status !== 200) {
       throw new Error("Sorry Server not responding");
     }

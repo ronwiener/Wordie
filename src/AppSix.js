@@ -149,7 +149,7 @@ class AppSix extends React.Component {
   };
 
   async downloadDictionary() {
-    let res = await fetch("6letterWords.txt");
+    let res = await fetch("sixLetterWords.txt");
     if (res.status !== 200) {
       throw new Error("Sorry Server not responding");
     }
